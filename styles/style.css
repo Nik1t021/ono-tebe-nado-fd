@@ -59,7 +59,7 @@ a:hover {
   object-fit: contain;
 }
 
-.header__address {
+.address {
   font-style: normal;
   font-size: 18px;
   line-height: 1.2;
@@ -75,69 +75,70 @@ a:hover {
 
 .cover {
   width: 1100px;
+  min-height: 757px;
   margin: 0 auto;
   position: relative;
+  background-image: url('../images/cover.jpg');
   background-size: cover;
+  background-position: center;
 }
-
-.cover__background {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.5);
-  min-height: 757px;
-}
-
-.cover__overlay {
+.cover::before {
+  content: '';
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.cover__overlay {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 30px 40px;
 }
-
 .cover__words {
   flex: 1;
-  position: relative;
-  color: aliceblue;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0;
 }
 
 .cover__word {
-  position: absolute;
+  position: relative;
   font-size: 100px;
   font-weight: 700;
   text-transform: uppercase;
   opacity: 0.85;
   letter-spacing: 0.3em;
+  color:aliceblue;
 }
 
 .cover__word_top {
-  top: 165px;
-  left: 50px;
+  align-self: flex-start;
+  padding-top: 100px;
 }
 
 .cover__word_center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  align-self: center;
 }
 
 .cover__word_bottom {
-  bottom: 165px;
-  right: 50px;
+  align-self: flex-end;
+  padding-bottom: 50px;
 }
 
 .cover__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 
 .cover__tagline {
-  font-size: 18px;
-  letter-spacing: 4px;
+  font-size: 22px;
+  word-spacing: 16px;
   text-transform: uppercase;
   white-space: nowrap;
   margin: 0;
@@ -152,12 +153,13 @@ a:hover {
   opacity: 0.8;
   padding: 12px 32px;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
+  margin-left: 100px;
 }
 
 .cover__button:hover {
@@ -198,7 +200,15 @@ a:hover {
   color: #ffffff;
   display: block;
 }
-
+.card_type_film{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-01.jpg);
+}
+.card_type_book{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-02.jpg);
+}
+.card_type_picture{
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-03.jpg);
+}
 .card {
   width: 334px;
   min-height: 596px;
@@ -213,7 +223,6 @@ a:hover {
   object-fit: cover;
   position: absolute;
   inset: 0;
-  filter: brightness(60%);
 }
 
 .card__overlay {
@@ -224,13 +233,6 @@ a:hover {
   justify-content: space-between;
   height: 100%;
   padding: 30px 20px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6) 0%,
-    transparent 40%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
 }
 
 .card__title {
@@ -283,7 +285,6 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .about__logo-image {
@@ -327,17 +328,6 @@ a:hover {
   align-items: flex-start;
   justify-content: space-between;
   padding:0 50px 80px 50px;
-}
-
-.footer__address {
-  font-style: normal;
-  font-size: 18px;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-weight: 400;
-  border: #000;
 }
 
 .footer__menu-list {
