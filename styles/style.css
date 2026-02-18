@@ -82,27 +82,23 @@ a:hover {
   background-size: cover;
   background-position: center;
 }
-.cover::before {
-  content: '';
+
+.cover__overlay{
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-.cover__overlay {
-  position: absolute;
-  z-index: 1;
+  z-index: 0;
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px 40px;
+  opacity: 0.6;
+  background-color: #000000;
+  inset: 0;
 }
+
 .cover__words {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 0;
+  padding: 50px 40px;
 }
 
 .cover__word {
@@ -110,7 +106,6 @@ a:hover {
   font-size: 100px;
   font-weight: 700;
   text-transform: uppercase;
-  opacity: 0.85;
   letter-spacing: 0.3em;
   color:aliceblue;
 }
@@ -133,7 +128,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding: 0px 40px 50px 0;
 }
 
 .cover__tagline {
@@ -144,6 +139,8 @@ a:hover {
   margin: 0;
   color: aliceblue;
   font-weight: 400;
+  padding-left: 40px;
+  z-index: 1;
 }
 
 .cover__button {
@@ -159,7 +156,6 @@ a:hover {
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
-  margin-left: 100px;
 }
 
 .cover__button:hover {
@@ -169,7 +165,6 @@ a:hover {
 
 .lots {
   width: 1100px;
-  margin: 0 auto;
   padding: 70px 0;
 }
 
@@ -197,57 +192,46 @@ a:hover {
 
 .card-link {
   text-decoration: none;
-  color: #ffffff;
-  display: block;
+  color: aliceblue;
 }
 .card_type_film{
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-01.jpg);
+  background:url(../images/card-lot-01.jpg);
 }
 .card_type_book{
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-02.jpg);
+  background:url(../images/card-lot-02.jpg);
 }
 .card_type_picture{
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../images/card-lot-03.jpg);
+  background:url(../images/card-lot-03.jpg);
 }
+
 .card {
-  width: 334px;
-  min-height: 596px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.card__image {
-  width: 100%;
+  width: 334px; 
   height: 100%;
-  object-fit: cover;
-  position: absolute;
-  inset: 0;
-}
-
-.card__overlay {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding: 50px 40px;
   justify-content: space-between;
-  height: 100%;
-  padding: 30px 20px;
+  background-position: center;
+  background-size: cover;
 }
 
 .card__title {
-  width: 254px;
-  min-height: 82px;
+  position: relative;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.3;
-  text-transform: uppercase;
   text-decoration: underline;
+  z-index: 1;
+  text-transform: uppercase;
 }
 
 .card__text {
+  position: relative;
   font-size: 20px;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 24px;
+  z-index: 1;
 }
 
 .lots__look-more-link {
@@ -295,7 +279,6 @@ a:hover {
 
 .about__title {
   width: 291px;
-  min-height: 47px;
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
